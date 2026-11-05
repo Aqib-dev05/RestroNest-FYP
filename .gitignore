@@ -1,0 +1,4 @@
+node_modules
+.env
+packange-lock.json
+bun-lock.json
