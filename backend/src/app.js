@@ -31,22 +31,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({
-    success: false,
-    message: `Route not found: ${req.originalUrl}`,
-  });
-});
 
-// Global error handler
-app.use((err, req, res, next) => {
-  console.error("Error:", err);
 
-  res.status(err.statusCode || 500).json({
-    success: false,
-    message: err.message || "Internal Server Error",
-  });
-});
 
 export default app;
