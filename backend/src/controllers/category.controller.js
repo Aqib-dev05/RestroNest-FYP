@@ -1,34 +1,24 @@
-import ApiResponse from "../utils/ApiResponse.js";
-import ApiError from "../utils/ApiError.js";
+import ApiResponse from "../utils/apiResponse.js";
+import ApiError from "../utils/apiError.js";
 
 const listCategories = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, [], "Categories fetched"));
+  return res.status(200).json(new ApiResponse(200, [], "Categories fetched"));
 };
 
 const getCategory = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Category fetched"));
+  return res.status(200).json(new ApiResponse(200, null, "Category fetched"));
 };
 
 const createCategory = async (req, res) => {
-  return res
-    .status(201)
-    .json(new ApiResponse(201, null, "Category created"));
+  return res.status(201).json(new ApiResponse(201, null, "Category created"));
 };
 
 const updateCategory = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Category updated"));
+  return res.status(200).json(new ApiResponse(200, null, "Category updated"));
 };
 
 const deleteCategory = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Category deleted"));
+  return res.status(200).json(new ApiResponse(200, null, "Category deleted"));
 };
 
 export {

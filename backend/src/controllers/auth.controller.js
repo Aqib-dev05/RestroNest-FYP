@@ -1,5 +1,5 @@
-import ApiResponse from "../utils/ApiResponse.js";
-import ApiError from "../utils/ApiError.js";
+import ApiResponse from "../utils/apiResponse.js";
+import ApiError from "../utils/apiError.js";
 
 const registerRestaurant = async (req, res) => {
   return res
@@ -8,9 +8,7 @@ const registerRestaurant = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Login successful"));
+  return res.status(200).json(new ApiResponse(200, null, "Login successful"));
 };
 
 const adminLogin = async (req, res) => {
@@ -20,15 +18,11 @@ const adminLogin = async (req, res) => {
 };
 
 const logout = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Logout successful"));
+  return res.status(200).json(new ApiResponse(200, null, "Logout successful"));
 };
 
 const getMe = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "User fetched"));
+  return res.status(200).json(new ApiResponse(200, null, "User fetched"));
 };
 
 export { registerRestaurant, login, adminLogin, logout, getMe };

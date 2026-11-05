@@ -1,22 +1,16 @@
-import ApiResponse from "../utils/ApiResponse.js";
-import ApiError from "../utils/ApiError.js";
+import ApiResponse from "../utils/apiResponse.js";
+import ApiError from "../utils/apiError.js";
 
 const getSummary = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Summary fetched"));
+  return res.status(200).json(new ApiResponse(200, null, "Summary fetched"));
 };
 
 const getBestSellers = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, [], "Best sellers fetched"));
+  return res.status(200).json(new ApiResponse(200, [], "Best sellers fetched"));
 };
 
 const getPeakHours = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, [], "Peak hours fetched"));
+  return res.status(200).json(new ApiResponse(200, [], "Peak hours fetched"));
 };
 
 const getPaymentSplit = async (req, res) => {

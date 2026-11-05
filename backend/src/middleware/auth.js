@@ -1,5 +1,5 @@
-import { verifyToken } from "../utils/jwt.js";
-import ApiError from "../utils/ApiError.js";
+import verifyToken from "../utils/jwt.js";
+import ApiError from "../utils/apiError.js";
 
 export const auth = (req, res, next) => {
   const token = req.cookies?.token;

@@ -1,46 +1,32 @@
-import ApiResponse from "../utils/ApiResponse.js";
-import ApiError from "../utils/ApiError.js";
+import ApiResponse from "../utils/apiResponse.js";
+import ApiError from "../utils/apiError.js";
 
 const listTables = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, [], "Tables fetched"));
+  return res.status(200).json(new ApiResponse(200, [], "Tables fetched"));
 };
 
 const getTable = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Table fetched"));
+  return res.status(200).json(new ApiResponse(200, null, "Table fetched"));
 };
 
 const createTable = async (req, res) => {
-  return res
-    .status(201)
-    .json(new ApiResponse(201, null, "Table created"));
+  return res.status(201).json(new ApiResponse(201, null, "Table created"));
 };
 
 const updateTable = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Table updated"));
+  return res.status(200).json(new ApiResponse(200, null, "Table updated"));
 };
 
 const deleteTable = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Table deleted"));
+  return res.status(200).json(new ApiResponse(200, null, "Table deleted"));
 };
 
 const downloadQrPdf = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "QR PDF generated"));
+  return res.status(200).json(new ApiResponse(200, null, "QR PDF generated"));
 };
 
 const getTableQr = async (req, res) => {
-  return res
-    .status(200)
-    .json(new ApiResponse(200, null, "Table QR fetched"));
+  return res.status(200).json(new ApiResponse(200, null, "Table QR fetched"));
 };
 
 const regenerateToken = async (req, res) => {
