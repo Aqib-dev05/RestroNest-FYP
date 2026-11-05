@@ -1,6 +1,7 @@
 node_modules
 .env
-packange-lock.json
-bun-lock.json
+package-lock.json
+bun.lock
 project-context.md
 AGENT.md
+public/temp

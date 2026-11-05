@@ -1,8 +1,14 @@
 import { Router } from "express";
-import { getUploadSignature } from "../controllers/upload.controller.js";
+import {
+  uploadImage,
+  getUploadSignature,
+} from "../controllers/upload.controller.js";
+import { upload } from "../middleware/multer.js";
 
 const router = Router();
 
-router.post("/sign", getUploadSignature);
+router
+  .post("/image", upload.single("image"), uploadImage)
+  .post("/sign", getUploadSignature);
 
 export default router;
