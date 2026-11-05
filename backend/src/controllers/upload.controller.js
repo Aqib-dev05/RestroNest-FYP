@@ -1,7 +1,10 @@
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/ApiError.js";
 
-export async function getUploadSignature(req, res) {
-  return new ApiResponse(200, "Upload signature generated", null).send(res);
-}
+const getUploadSignature = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Upload signature generated"));
+};
 
+export { getUploadSignature };

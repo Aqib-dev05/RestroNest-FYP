@@ -1,19 +1,40 @@
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/ApiError.js";
 
-export async function listSessions(req, res) {
-  return new ApiResponse(200, "Sessions fetched", []).send(res);
-}
+const listSessions = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, [], "Sessions fetched"));
+};
 
-export async function getBill(req, res) {
-  return new ApiResponse(200, "Bill fetched", null).send(res);
-}
+const getSession = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Session fetched"));
+};
 
-export async function paySession(req, res) {
-  return new ApiResponse(200, "Session paid", null).send(res);
-}
+const getBill = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Bill fetched"));
+};
 
-export async function downloadReceipt(req, res) {
-  return new ApiResponse(200, "Receipt generated", null).send(res);
-}
+const paySession = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Session paid"));
+};
 
+const downloadReceipt = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Receipt generated"));
+};
+
+export {
+  listSessions,
+  getSession,
+  getBill,
+  paySession,
+  downloadReceipt,
+};

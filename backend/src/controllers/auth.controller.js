@@ -1,19 +1,34 @@
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/ApiError.js";
 
-export async function registerRestaurant(req, res) {
-  return new ApiResponse(201, "Restaurant registered successfully", null).send(res);
-}
+const registerRestaurant = async (req, res) => {
+  return res
+    .status(201)
+    .json(new ApiResponse(201, null, "Restaurant registered successfully"));
+};
 
-export async function login(req, res) {
-  return new ApiResponse(200, "Login successful", null).send(res);
-}
+const login = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Login successful"));
+};
 
-export async function adminLogin(req, res) {
-  return new ApiResponse(200, "Admin login successful", null).send(res);
-}
+const adminLogin = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Admin login successful"));
+};
 
-export async function getMe(req, res) {
-  return new ApiResponse(200, "User fetched", null).send(res);
-}
+const logout = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Logout successful"));
+};
 
+const getMe = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "User fetched"));
+};
+
+export { registerRestaurant, login, adminLogin, logout, getMe };

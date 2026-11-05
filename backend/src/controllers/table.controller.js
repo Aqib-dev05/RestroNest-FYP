@@ -1,31 +1,61 @@
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/ApiError.js";
 
-export async function listTables(req, res) {
-  return new ApiResponse(200, "Tables fetched", []).send(res);
-}
+const listTables = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, [], "Tables fetched"));
+};
 
-export async function createTable(req, res) {
-  return new ApiResponse(201, "Table created", null).send(res);
-}
+const getTable = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Table fetched"));
+};
 
-export async function updateTable(req, res) {
-  return new ApiResponse(200, "Table updated", null).send(res);
-}
+const createTable = async (req, res) => {
+  return res
+    .status(201)
+    .json(new ApiResponse(201, null, "Table created"));
+};
 
-export async function deleteTable(req, res) {
-  return new ApiResponse(200, "Table deleted", null).send(res);
-}
+const updateTable = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Table updated"));
+};
 
-export async function downloadQrPdf(req, res) {
-  return new ApiResponse(200, "QR PDF generated", null).send(res);
-}
+const deleteTable = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Table deleted"));
+};
 
-export async function getTableQr(req, res) {
-  return new ApiResponse(200, "Table QR fetched", null).send(res);
-}
+const downloadQrPdf = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "QR PDF generated"));
+};
 
-export async function regenerateToken(req, res) {
-  return new ApiResponse(200, "Table token regenerated", null).send(res);
-}
+const getTableQr = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Table QR fetched"));
+};
 
+const regenerateToken = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Table token regenerated"));
+};
+
+export {
+  listTables,
+  getTable,
+  createTable,
+  updateTable,
+  deleteTable,
+  downloadQrPdf,
+  getTableQr,
+  regenerateToken,
+};

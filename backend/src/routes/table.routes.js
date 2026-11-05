@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   listTables,
+  getTable,
   createTable,
   updateTable,
   deleteTable,
@@ -11,14 +12,14 @@ import {
 
 const router = Router();
 
-router.get("/", listTables);
-router.post("/", createTable);
-// NOTE: /qr-pdf must come before /:id routes to avoid param conflict
-router.get("/qr-pdf", downloadQrPdf);
-router.patch("/:id", updateTable);
-router.delete("/:id", deleteTable);
-router.get("/:id/qr", getTableQr);
-router.post("/:id/regenerate-token", regenerateToken);
+router
+  .get("/", listTables)
+  .post("/", createTable)
+  .get("/qr-pdf", downloadQrPdf)
+  .get("/:id", getTable)
+  .patch("/:id", updateTable)
+  .delete("/:id", deleteTable)
+  .get("/:id/qr", getTableQr)
+  .post("/:id/regenerate-token", regenerateToken);
 
 export default router;
-

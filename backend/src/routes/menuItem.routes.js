@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   listItems,
+  getItem,
   createItem,
   updateItem,
   deleteItem,
@@ -9,11 +10,12 @@ import {
 
 const router = Router();
 
-router.get("/", listItems);
-router.post("/", createItem);
-router.patch("/:id", updateItem);
-router.delete("/:id", deleteItem);
-router.patch("/:id/stock", toggleStock);
+router
+  .get("/", listItems)
+  .post("/", createItem)
+  .get("/:id", getItem)
+  .patch("/:id", updateItem)
+  .delete("/:id", deleteItem)
+  .patch("/:id/stock", toggleStock);
 
 export default router;
-

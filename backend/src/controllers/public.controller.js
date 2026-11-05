@@ -1,15 +1,22 @@
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/ApiError.js";
 
-export async function getMenuByQr(req, res) {
-  return new ApiResponse(200, "Menu fetched", null).send(res);
-}
+const getMenuByQr = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Menu fetched"));
+};
 
-export async function placeOrder(req, res) {
-  return new ApiResponse(201, "Order placed", null).send(res);
-}
+const placeOrder = async (req, res) => {
+  return res
+    .status(201)
+    .json(new ApiResponse(201, null, "Order placed"));
+};
 
-export async function getMySession(req, res) {
-  return new ApiResponse(200, "Session fetched", null).send(res);
-}
+const getMySession = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Session fetched"));
+};
 
+export { getMenuByQr, placeOrder, getMySession };

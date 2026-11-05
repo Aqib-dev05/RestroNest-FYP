@@ -7,9 +7,9 @@ import {
 
 const router = Router();
 
-router.get("/", listOrders);
-router.get("/:id", getOrder);
-router.patch("/:id/status", updateOrderStatus);
+router
+  .get("/", listOrders)
+  .get("/:id", getOrder)
+  .patch("/:id/status", updateOrderStatus);
 
 export default router;
-

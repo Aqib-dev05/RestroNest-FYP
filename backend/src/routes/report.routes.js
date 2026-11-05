@@ -8,10 +8,10 @@ import {
 
 const router = Router();
 
-router.get("/summary", getSummary);
-router.get("/best-sellers", getBestSellers);
-router.get("/peak-hours", getPeakHours);
-router.get("/payment-split", getPaymentSplit);
+router
+  .get("/summary", getSummary)
+  .get("/best-sellers", getBestSellers)
+  .get("/peak-hours", getPeakHours)
+  .get("/payment-split", getPaymentSplit);
 
 export default router;
-

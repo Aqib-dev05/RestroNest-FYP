@@ -1,15 +1,22 @@
 import ApiResponse from "../utils/ApiResponse.js";
 import ApiError from "../utils/ApiError.js";
 
-export async function listOrders(req, res) {
-  return new ApiResponse(200, "Orders fetched", []).send(res);
-}
+const listOrders = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, [], "Orders fetched"));
+};
 
-export async function getOrder(req, res) {
-  return new ApiResponse(200, "Order fetched", null).send(res);
-}
+const getOrder = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Order fetched"));
+};
 
-export async function updateOrderStatus(req, res) {
-  return new ApiResponse(200, "Order status updated", null).send(res);
-}
+const updateOrderStatus = async (req, res) => {
+  return res
+    .status(200)
+    .json(new ApiResponse(200, null, "Order status updated"));
+};
 
+export { listOrders, getOrder, updateOrderStatus };

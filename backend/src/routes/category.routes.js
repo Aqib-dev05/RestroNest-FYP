@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   listCategories,
+  getCategory,
   createCategory,
   updateCategory,
   deleteCategory,
@@ -8,10 +9,11 @@ import {
 
 const router = Router();
 
-router.get("/", listCategories);
-router.post("/", createCategory);
-router.patch("/:id", updateCategory);
-router.delete("/:id", deleteCategory);
+router
+  .get("/", listCategories)
+  .post("/", createCategory)
+  .get("/:id", getCategory)
+  .patch("/:id", updateCategory)
+  .delete("/:id", deleteCategory);
 
 export default router;
-

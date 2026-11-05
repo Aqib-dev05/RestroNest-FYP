@@ -6,8 +6,8 @@ import {
 
 const router = Router();
 
-router.get("/settings", getSettings);
-router.patch("/settings", updateSettings);
+router
+  .get("/settings", getSettings)
+  .patch("/settings", updateSettings);
 
 export default router;
-

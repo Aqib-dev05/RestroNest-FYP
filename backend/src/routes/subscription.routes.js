@@ -1,9 +1,10 @@
 import { Router } from "express";
-import { listPlans } from "../controllers/subscription.controller.js";
+import { listPlans, getPlan } from "../controllers/subscription.controller.js";
 
 const router = Router();
 
-router.get("/", listPlans);
+router
+  .get("/", listPlans)
+  .get("/:id", getPlan);
 
 export default router;
-

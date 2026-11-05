@@ -6,4 +6,3 @@ const router = Router();
 router.post("/sign", getUploadSignature);
 
 export default router;
-

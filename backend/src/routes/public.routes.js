@@ -7,9 +7,9 @@ import {
 
 const router = Router();
 
-router.get("/menu/:qrToken", getMenuByQr);
-router.post("/orders", placeOrder);
-router.get("/session/:sessionToken", getMySession);
+router
+  .get("/menu/:qrToken", getMenuByQr)
+  .post("/orders", placeOrder)
+  .get("/session/:sessionToken", getMySession);
 
 export default router;
-

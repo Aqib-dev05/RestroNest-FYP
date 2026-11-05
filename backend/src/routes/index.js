@@ -13,17 +13,17 @@ import reportRouter from "./report.routes.js";
 
 const router = Router();
 
-router.use("/auth", authRouter);
-router.use("/subscriptions", subscriptionRouter);
-router.use("/restaurant", restaurantRouter);
-router.use("/categories", categoryRouter);
-router.use("/menu-items", menuItemRouter);
-router.use("/uploads", uploadRouter);
-router.use("/tables", tableRouter);
-router.use("/public", publicRouter);
-router.use("/orders", orderRouter);
-router.use("/sessions", sessionRouter);
-router.use("/reports", reportRouter);
+router
+  .use("/auth", authRouter)
+  .use("/subscriptions", subscriptionRouter)
+  .use("/restaurant", restaurantRouter)
+  .use("/categories", categoryRouter)
+  .use("/menu-items", menuItemRouter)
+  .use("/uploads", uploadRouter)
+  .use("/tables", tableRouter)
+  .use("/public", publicRouter)
+  .use("/orders", orderRouter)
+  .use("/sessions", sessionRouter)
+  .use("/reports", reportRouter);
 
 export default router;
-

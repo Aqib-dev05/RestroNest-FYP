@@ -1,6 +1,7 @@
 import { Router } from "express";
 import {
   listSessions,
+  getSession,
   getBill,
   paySession,
   downloadReceipt,
@@ -8,10 +9,11 @@ import {
 
 const router = Router();
 
-router.get("/", listSessions);
-router.get("/:id/bill", getBill);
-router.post("/:id/pay", paySession);
-router.get("/:id/receipt.pdf", downloadReceipt);
+router
+  .get("/", listSessions)
+  .get("/:id", getSession)
+  .get("/:id/bill", getBill)
+  .post("/:id/pay", paySession)
+  .get("/:id/receipt.pdf", downloadReceipt);
 
 export default router;
-
