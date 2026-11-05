@@ -1,22 +1,17 @@
-// middleware/auth.js
-// Verifies JWT from Authorization header. Attaches req.user.
-// Works for both staff (type: 'staff') and super admin (type: 'admin').
-
-import jwt from "jsonwebtoken";
-import { ApiError } from "../utils/apiResponse.js";
+import { verifyToken } from "../utils/jwt.js";
+import ApiError from "../utils/ApiError.js";
 
 export const auth = (req, res, next) => {
-  const header = req.headers.authorization;
-  if (!header || !header.startsWith("Bearer ")) {
-    throw new ApiError(401, "UNAUTHORIZED", "No token provided.");
+  const token = req.cookies?.token;
+  if (!token) {
+    throw new ApiError(401, "No token provided. Please log in.");
   }
 
-  const token = header.slice(7);
   let payload;
   try {
-    payload = jwt.verify(token, process.env.JWT_SECRET);
+    payload = verifyToken(token);
   } catch {
-    throw new ApiError(401, "UNAUTHORIZED", "Invalid or expired token.");
+    throw new ApiError(401, "Invalid or expired token.");
   }
 
   req.user = payload; // { id, restaurantId, role, type }
